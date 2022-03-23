@@ -1,15 +1,9 @@
 package br.com.mma.entities;
 
-import javax.persistence.*;
-import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "worker")
 public class Worker {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private BigDecimal dailyIncome;
