@@ -2,7 +2,7 @@ package br.com.mma.services;
 
 import br.com.mma.entities.Payment;
 import br.com.mma.entities.Worker;
-import br.com.mma.feignclients.WorkerFeignClients;
+import br.com.mma.feignclients.WorkerFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class PaymentService {
     private RestTemplate restTemplate;
 
     @Autowired
-    private WorkerFeignClients workerFeignClient;
+    private WorkerFeignClient workerFeignClient;
 
     public Payment getPayment(Long workerId, int days) {
         Worker worker = workerFeignClient.findById(workerId).getBody();
